@@ -1,0 +1,243 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="David_BadmintonModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="David_BadmintonEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Coachs" EntityType="David_BadmintonModel.Coachs" />
+    <EntitySet Name="Facilitys" EntityType="David_BadmintonModel.Facilitys" />
+    <EntitySet Name="LearningProcess" EntityType="David_BadmintonModel.LearningProcess" />
+    <EntitySet Name="ModuleAccess" EntityType="David_BadmintonModel.ModuleAccess" />
+    <EntitySet Name="RollCall" EntityType="David_BadmintonModel.RollCall" />
+    <EntitySet Name="StudentDetails" EntityType="David_BadmintonModel.StudentDetails" />
+    <EntitySet Name="Students" EntityType="David_BadmintonModel.Students" />
+    <EntitySet Name="Time" EntityType="David_BadmintonModel.Time" />
+    <EntitySet Name="TypeUsers" EntityType="David_BadmintonModel.TypeUsers" />
+    <EntitySet Name="UserModules" EntityType="David_BadmintonModel.UserModules" />
+  </EntityContainer>
+  <EntityType Name="Coachs">
+    <Key>
+      <PropertyRef Name="CoachID" />
+      <PropertyRef Name="CoachName" />
+      <PropertyRef Name="TypeUserID" />
+      <PropertyRef Name="GenderID" />
+      <PropertyRef Name="Birthday" />
+      <PropertyRef Name="Password" />
+      <PropertyRef Name="Phone" />
+      <PropertyRef Name="StatusID" />
+      <PropertyRef Name="Level" />
+      <PropertyRef Name="TaxCode" />
+      <PropertyRef Name="BankName" />
+      <PropertyRef Name="BankNumber" />
+      <PropertyRef Name="WorkingStart" />
+      <PropertyRef Name="CCCD" />
+      <PropertyRef Name="MaritalStatus" />
+      <PropertyRef Name="UserCreated" />
+      <PropertyRef Name="UserUpdated" />
+      <PropertyRef Name="DateCreated" />
+      <PropertyRef Name="DateUpdated" />
+    </Key>
+    <Property Name="CoachID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CoachName" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="Images" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="TypeUserID" Type="Int32" Nullable="false" />
+    <Property Name="GenderID" Type="Int32" Nullable="false" />
+    <Property Name="Birthday" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Password" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="Phone" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="StatusID" Type="Int32" Nullable="false" />
+    <Property Name="Education" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="Experience" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="Level" Type="Int32" Nullable="false" />
+    <Property Name="TaxCode" Type="Int32" Nullable="false" />
+    <Property Name="BankName" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="BankNumber" Type="Int32" Nullable="false" />
+    <Property Name="WorkingStart" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="HealthCondition" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="CCCD" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="PlaceOfOrigin" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="PlaceOfResidence" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="Salary" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="MaritalStatus" Type="Int32" Nullable="false" />
+    <Property Name="Description" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="NamePerson" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="Relationship" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="PhoneNumber" Type="Int32" />
+    <Property Name="UserCreated" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="UserUpdated" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="DateCreated" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="DateUpdated" Type="DateTime" Nullable="false" Precision="3" />
+  </EntityType>
+  <EntityType Name="Facilitys">
+    <Key>
+      <PropertyRef Name="FacilityID" />
+      <PropertyRef Name="FacilityName" />
+      <PropertyRef Name="Address" />
+      <PropertyRef Name="Longtitude" />
+      <PropertyRef Name="Latitude" />
+    </Key>
+    <Property Name="FacilityID" Type="Int32" Nullable="false" />
+    <Property Name="FacilityName" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="Address" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="Longtitude" Type="Decimal" Nullable="false" Precision="18" Scale="0" />
+    <Property Name="Latitude" Type="Decimal" Nullable="false" Precision="18" Scale="0" />
+  </EntityType>
+  <EntityType Name="LearningProcess">
+    <Key>
+      <PropertyRef Name="LearningProcessID" />
+      <PropertyRef Name="StudentID" />
+      <PropertyRef Name="TimeStart" />
+      <PropertyRef Name="TimeEnd" />
+      <PropertyRef Name="CoachName" />
+    </Key>
+    <Property Name="LearningProcessID" Type="Int32" Nullable="false" />
+    <Property Name="StudentID" Type="Int32" Nullable="false" />
+    <Property Name="TimeStart" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="TimeEnd" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="CoachName" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="LearningOutComes" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="Comment" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="Feedback" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="ModuleAccess">
+    <Key>
+      <PropertyRef Name="ModuleID" />
+      <PropertyRef Name="Name" />
+      <PropertyRef Name="Description" />
+      <PropertyRef Name="DateCreated" />
+      <PropertyRef Name="DateUpdated" />
+      <PropertyRef Name="UserCreated" />
+      <PropertyRef Name="UserUpdated" />
+    </Key>
+    <Property Name="ModuleID" Type="Decimal" Nullable="false" Precision="18" Scale="0" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="Description" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="DateCreated" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="DateUpdated" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="UserCreated" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="UserUpdated" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="RollCall">
+    <Key>
+      <PropertyRef Name="RollCallID" />
+      <PropertyRef Name="StudentID" />
+      <PropertyRef Name="StatusID" />
+      <PropertyRef Name="TimeRollCall" />
+      <PropertyRef Name="UserCreated" />
+      <PropertyRef Name="UserUpdated" />
+      <PropertyRef Name="DateCreated" />
+      <PropertyRef Name="DateUpdated" />
+    </Key>
+    <Property Name="RollCallID" Type="Int32" Nullable="false" />
+    <Property Name="StudentID" Type="Int32" Nullable="false" />
+    <Property Name="isCheck" Type="Int32" />
+    <Property Name="StatusID" Type="Int32" Nullable="false" />
+    <Property Name="TimeRollCall" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="UserCreated" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="UserUpdated" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="DateCreated" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="DateUpdated" Type="DateTime" Nullable="false" Precision="0" />
+  </EntityType>
+  <EntityType Name="StudentDetails">
+    <Key>
+      <PropertyRef Name="StudentDetailsID" />
+      <PropertyRef Name="StudentID" />
+      <PropertyRef Name="StudentName" />
+      <PropertyRef Name="GenderID" />
+      <PropertyRef Name="Birthday" />
+      <PropertyRef Name="Phone" />
+      <PropertyRef Name="StatusID" />
+      <PropertyRef Name="Address" />
+      <PropertyRef Name="Password" />
+      <PropertyRef Name="Tuitions" />
+      <PropertyRef Name="StudyStart" />
+      <PropertyRef Name="UserCreated" />
+      <PropertyRef Name="UserUpdated" />
+      <PropertyRef Name="DateCreated" />
+      <PropertyRef Name="DateUpdated" />
+    </Key>
+    <Property Name="StudentDetailsID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="StudentID" Type="Int32" Nullable="false" />
+    <Property Name="StudentName" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="Images" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="GenderID" Type="Int32" Nullable="false" />
+    <Property Name="Birthday" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="Phone" Type="Int32" Nullable="false" />
+    <Property Name="StatusID" Type="Int32" Nullable="false" />
+    <Property Name="Address" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="Password" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="Level" Type="Int32" />
+    <Property Name="CoachName1" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="CoachName2" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="CoachName3" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="Tuitions" Type="Decimal" Nullable="false" Precision="18" Scale="0" />
+    <Property Name="StudyStart" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="HealthCondition" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="Height" Type="Int32" />
+    <Property Name="Weight" Type="Int32" />
+    <Property Name="GuardianName" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="Relationship" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="GuardianPhone" Type="Int32" />
+    <Property Name="Description" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="UserCreated" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="UserUpdated" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="DateCreated" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="DateUpdated" Type="DateTime" Nullable="false" Precision="3" />
+  </EntityType>
+  <EntityType Name="Students">
+    <Key>
+      <PropertyRef Name="StudentID" />
+      <PropertyRef Name="isCheck" />
+      <PropertyRef Name="FacilityID" />
+      <PropertyRef Name="CoachID" />
+      <PropertyRef Name="TimeID" />
+      <PropertyRef Name="RollCallID" />
+      <PropertyRef Name="TypeUserID" />
+    </Key>
+    <Property Name="StudentID" Type="Int32" Nullable="false" />
+    <Property Name="isCheck" Type="Int32" Nullable="false" />
+    <Property Name="FacilityID" Type="Int32" Nullable="false" />
+    <Property Name="CoachID" Type="Int32" Nullable="false" />
+    <Property Name="TimeID" Type="Int32" Nullable="false" />
+    <Property Name="RollCallID" Type="Int32" Nullable="false" />
+    <Property Name="TypeUserID" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Time">
+    <Key>
+      <PropertyRef Name="TimeID" />
+      <PropertyRef Name="TimeName" />
+    </Key>
+    <Property Name="TimeID" Type="Int32" Nullable="false" />
+    <Property Name="TimeName" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="TypeUsers">
+    <Key>
+      <PropertyRef Name="TypeUserID" />
+      <PropertyRef Name="UserName" />
+      <PropertyRef Name="DateCreated" />
+      <PropertyRef Name="DateUpdated" />
+    </Key>
+    <Property Name="TypeUserID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="UserName" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="Description" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="DateCreated" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="DateUpdated" Type="DateTime" Nullable="false" Precision="3" />
+  </EntityType>
+  <EntityType Name="UserModules">
+    <Key>
+      <PropertyRef Name="UserModuleID" />
+      <PropertyRef Name="ModuleID" />
+      <PropertyRef Name="CoachID" />
+      <PropertyRef Name="StudentID" />
+      <PropertyRef Name="IsView" />
+      <PropertyRef Name="IsInsert" />
+      <PropertyRef Name="IsDelete" />
+      <PropertyRef Name="IsUpdate" />
+    </Key>
+    <Property Name="UserModuleID" Type="Decimal" Nullable="false" Precision="18" Scale="0" />
+    <Property Name="ModuleID" Type="Decimal" Nullable="false" Precision="18" Scale="0" />
+    <Property Name="CoachID" Type="Int32" Nullable="false" />
+    <Property Name="StudentID" Type="Int32" Nullable="false" />
+    <Property Name="IsView" Type="Int32" Nullable="false" />
+    <Property Name="IsInsert" Type="Int32" Nullable="false" />
+    <Property Name="IsDelete" Type="Int32" Nullable="false" />
+    <Property Name="IsUpdate" Type="Int32" Nullable="false" />
+  </EntityType>
+</Schema>

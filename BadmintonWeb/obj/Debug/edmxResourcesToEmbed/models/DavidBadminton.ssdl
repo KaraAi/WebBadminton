@@ -1,0 +1,401 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="David_BadmintonModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'David_Badminton.dbo.Coachs' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="Coachs">
+    <Key>
+      <PropertyRef Name="CoachID" />
+      <PropertyRef Name="CoachName" />
+      <PropertyRef Name="TypeUserID" />
+      <PropertyRef Name="GenderID" />
+      <PropertyRef Name="Birthday" />
+      <PropertyRef Name="Password" />
+      <PropertyRef Name="Phone" />
+      <PropertyRef Name="StatusID" />
+      <PropertyRef Name="Level" />
+      <PropertyRef Name="TaxCode" />
+      <PropertyRef Name="BankName" />
+      <PropertyRef Name="BankNumber" />
+      <PropertyRef Name="WorkingStart" />
+      <PropertyRef Name="CCCD" />
+      <PropertyRef Name="MaritalStatus" />
+      <PropertyRef Name="UserCreated" />
+      <PropertyRef Name="UserUpdated" />
+      <PropertyRef Name="DateCreated" />
+      <PropertyRef Name="DateUpdated" />
+    </Key>
+    <Property Name="CoachID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CoachName" Type="nvarchar" MaxLength="500" Nullable="false" />
+    <Property Name="Images" Type="nvarchar" MaxLength="500" />
+    <Property Name="TypeUserID" Type="int" Nullable="false" />
+    <Property Name="GenderID" Type="int" Nullable="false" />
+    <Property Name="Birthday" Type="datetime" Nullable="false" />
+    <Property Name="Password" Type="nvarchar" MaxLength="500" Nullable="false" />
+    <Property Name="Phone" Type="nvarchar" MaxLength="500" Nullable="false" />
+    <Property Name="StatusID" Type="int" Nullable="false" />
+    <Property Name="Education" Type="nvarchar" MaxLength="500" />
+    <Property Name="Experience" Type="nvarchar" MaxLength="500" />
+    <Property Name="Level" Type="int" Nullable="false" />
+    <Property Name="TaxCode" Type="int" Nullable="false" />
+    <Property Name="BankName" Type="nvarchar" MaxLength="500" Nullable="false" />
+    <Property Name="BankNumber" Type="int" Nullable="false" />
+    <Property Name="WorkingStart" Type="datetime" Nullable="false" />
+    <Property Name="HealthCondition" Type="nvarchar" MaxLength="500" />
+    <Property Name="CCCD" Type="nvarchar" MaxLength="500" Nullable="false" />
+    <Property Name="PlaceOfOrigin" Type="nvarchar" MaxLength="500" />
+    <Property Name="PlaceOfResidence" Type="nvarchar" MaxLength="500" />
+    <Property Name="Salary" Type="decimal" Precision="18" Scale="0" />
+    <Property Name="MaritalStatus" Type="int" Nullable="false" />
+    <Property Name="Description" Type="nvarchar" MaxLength="500" />
+    <Property Name="NamePerson" Type="nvarchar" MaxLength="500" />
+    <Property Name="Relationship" Type="nvarchar" MaxLength="500" />
+    <Property Name="PhoneNumber" Type="int" />
+    <Property Name="UserCreated" Type="nvarchar" MaxLength="500" Nullable="false" />
+    <Property Name="UserUpdated" Type="nvarchar" MaxLength="500" Nullable="false" />
+    <Property Name="DateCreated" Type="datetime" Nullable="false" />
+    <Property Name="DateUpdated" Type="datetime" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'David_Badminton.dbo.Facilitys' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="Facilitys">
+    <Key>
+      <PropertyRef Name="FacilityID" />
+      <PropertyRef Name="FacilityName" />
+      <PropertyRef Name="Address" />
+      <PropertyRef Name="Longtitude" />
+      <PropertyRef Name="Latitude" />
+    </Key>
+    <Property Name="FacilityID" Type="int" Nullable="false" />
+    <Property Name="FacilityName" Type="nvarchar" MaxLength="500" Nullable="false" />
+    <Property Name="Address" Type="nvarchar" MaxLength="500" Nullable="false" />
+    <Property Name="Longtitude" Type="numeric" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="Latitude" Type="numeric" Precision="18" Scale="0" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'David_Badminton.dbo.LearningProcess' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="LearningProcess">
+    <Key>
+      <PropertyRef Name="LearningProcessID" />
+      <PropertyRef Name="StudentID" />
+      <PropertyRef Name="TimeStart" />
+      <PropertyRef Name="TimeEnd" />
+      <PropertyRef Name="CoachName" />
+    </Key>
+    <Property Name="LearningProcessID" Type="int" Nullable="false" />
+    <Property Name="StudentID" Type="int" Nullable="false" />
+    <Property Name="TimeStart" Type="date" Nullable="false" />
+    <Property Name="TimeEnd" Type="date" Nullable="false" />
+    <Property Name="CoachName" Type="nvarchar" MaxLength="500" Nullable="false" />
+    <Property Name="LearningOutComes" Type="nvarchar" MaxLength="500" />
+    <Property Name="Comment" Type="nvarchar" MaxLength="500" />
+    <Property Name="Feedback" Type="nvarchar" MaxLength="500" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'David_Badminton.dbo.ModuleAccess' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="ModuleAccess">
+    <Key>
+      <PropertyRef Name="ModuleID" />
+      <PropertyRef Name="Name" />
+      <PropertyRef Name="Description" />
+      <PropertyRef Name="DateCreated" />
+      <PropertyRef Name="DateUpdated" />
+      <PropertyRef Name="UserCreated" />
+      <PropertyRef Name="UserUpdated" />
+    </Key>
+    <Property Name="ModuleID" Type="numeric" Precision="18" Scale="0" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="500" Nullable="false" />
+    <Property Name="Description" Type="nvarchar" MaxLength="500" Nullable="false" />
+    <Property Name="DateCreated" Type="datetime" Nullable="false" />
+    <Property Name="DateUpdated" Type="datetime" Nullable="false" />
+    <Property Name="UserCreated" Type="nvarchar" MaxLength="500" Nullable="false" />
+    <Property Name="UserUpdated" Type="nvarchar" MaxLength="500" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'David_Badminton.dbo.RollCall' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="RollCall">
+    <Key>
+      <PropertyRef Name="RollCallID" />
+      <PropertyRef Name="StudentID" />
+      <PropertyRef Name="StatusID" />
+      <PropertyRef Name="TimeRollCall" />
+      <PropertyRef Name="UserCreated" />
+      <PropertyRef Name="UserUpdated" />
+      <PropertyRef Name="DateCreated" />
+      <PropertyRef Name="DateUpdated" />
+    </Key>
+    <Property Name="RollCallID" Type="int" Nullable="false" />
+    <Property Name="StudentID" Type="int" Nullable="false" />
+    <Property Name="isCheck" Type="int" />
+    <Property Name="StatusID" Type="int" Nullable="false" />
+    <Property Name="TimeRollCall" Type="date" Nullable="false" />
+    <Property Name="UserCreated" Type="nvarchar" MaxLength="500" Nullable="false" />
+    <Property Name="UserUpdated" Type="nvarchar" MaxLength="500" Nullable="false" />
+    <Property Name="DateCreated" Type="date" Nullable="false" />
+    <Property Name="DateUpdated" Type="date" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'David_Badminton.dbo.StudentDetails' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="StudentDetails">
+    <Key>
+      <PropertyRef Name="StudentDetailsID" />
+      <PropertyRef Name="StudentID" />
+      <PropertyRef Name="StudentName" />
+      <PropertyRef Name="GenderID" />
+      <PropertyRef Name="Birthday" />
+      <PropertyRef Name="Phone" />
+      <PropertyRef Name="StatusID" />
+      <PropertyRef Name="Address" />
+      <PropertyRef Name="Password" />
+      <PropertyRef Name="Tuitions" />
+      <PropertyRef Name="StudyStart" />
+      <PropertyRef Name="UserCreated" />
+      <PropertyRef Name="UserUpdated" />
+      <PropertyRef Name="DateCreated" />
+      <PropertyRef Name="DateUpdated" />
+    </Key>
+    <Property Name="StudentDetailsID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="StudentID" Type="int" Nullable="false" />
+    <Property Name="StudentName" Type="nvarchar" MaxLength="500" Nullable="false" />
+    <Property Name="Images" Type="nvarchar" MaxLength="500" />
+    <Property Name="GenderID" Type="int" Nullable="false" />
+    <Property Name="Birthday" Type="date" Nullable="false" />
+    <Property Name="Phone" Type="int" Nullable="false" />
+    <Property Name="StatusID" Type="int" Nullable="false" />
+    <Property Name="Address" Type="nvarchar" MaxLength="500" Nullable="false" />
+    <Property Name="Password" Type="nvarchar" MaxLength="500" Nullable="false" />
+    <Property Name="Level" Type="int" />
+    <Property Name="CoachName1" Type="nvarchar" MaxLength="500" />
+    <Property Name="CoachName2" Type="nvarchar" MaxLength="500" />
+    <Property Name="CoachName3" Type="nvarchar" MaxLength="500" />
+    <Property Name="Tuitions" Type="numeric" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="StudyStart" Type="date" Nullable="false" />
+    <Property Name="HealthCondition" Type="nvarchar" MaxLength="500" />
+    <Property Name="Height" Type="int" />
+    <Property Name="Weight" Type="int" />
+    <Property Name="GuardianName" Type="nvarchar" MaxLength="500" />
+    <Property Name="Relationship" Type="nvarchar" MaxLength="500" />
+    <Property Name="GuardianPhone" Type="int" />
+    <Property Name="Description" Type="nvarchar" MaxLength="500" />
+    <Property Name="UserCreated" Type="nvarchar" MaxLength="500" Nullable="false" />
+    <Property Name="UserUpdated" Type="nvarchar" MaxLength="500" Nullable="false" />
+    <Property Name="DateCreated" Type="datetime" Nullable="false" />
+    <Property Name="DateUpdated" Type="datetime" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'David_Badminton.dbo.Students' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="Students">
+    <Key>
+      <PropertyRef Name="StudentID" />
+      <PropertyRef Name="isCheck" />
+      <PropertyRef Name="FacilityID" />
+      <PropertyRef Name="CoachID" />
+      <PropertyRef Name="TimeID" />
+      <PropertyRef Name="RollCallID" />
+      <PropertyRef Name="TypeUserID" />
+    </Key>
+    <Property Name="StudentID" Type="int" Nullable="false" />
+    <Property Name="isCheck" Type="int" Nullable="false" />
+    <Property Name="FacilityID" Type="int" Nullable="false" />
+    <Property Name="CoachID" Type="int" Nullable="false" />
+    <Property Name="TimeID" Type="int" Nullable="false" />
+    <Property Name="RollCallID" Type="int" Nullable="false" />
+    <Property Name="TypeUserID" Type="int" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'David_Badminton.dbo.Time' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="Time">
+    <Key>
+      <PropertyRef Name="TimeID" />
+      <PropertyRef Name="TimeName" />
+    </Key>
+    <Property Name="TimeID" Type="int" Nullable="false" />
+    <Property Name="TimeName" Type="nvarchar" MaxLength="500" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'David_Badminton.dbo.TypeUsers' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="TypeUsers">
+    <Key>
+      <PropertyRef Name="TypeUserID" />
+      <PropertyRef Name="UserName" />
+      <PropertyRef Name="DateCreated" />
+      <PropertyRef Name="DateUpdated" />
+    </Key>
+    <Property Name="TypeUserID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="UserName" Type="nvarchar" MaxLength="500" Nullable="false" />
+    <Property Name="Description" Type="nvarchar" MaxLength="500" />
+    <Property Name="DateCreated" Type="datetime" Nullable="false" />
+    <Property Name="DateUpdated" Type="datetime" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'David_Badminton.dbo.UserModules' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="UserModules">
+    <Key>
+      <PropertyRef Name="UserModuleID" />
+      <PropertyRef Name="ModuleID" />
+      <PropertyRef Name="CoachID" />
+      <PropertyRef Name="StudentID" />
+      <PropertyRef Name="IsView" />
+      <PropertyRef Name="IsInsert" />
+      <PropertyRef Name="IsDelete" />
+      <PropertyRef Name="IsUpdate" />
+    </Key>
+    <Property Name="UserModuleID" Type="numeric" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="ModuleID" Type="numeric" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="CoachID" Type="int" Nullable="false" />
+    <Property Name="StudentID" Type="int" Nullable="false" />
+    <Property Name="IsView" Type="int" Nullable="false" />
+    <Property Name="IsInsert" Type="int" Nullable="false" />
+    <Property Name="IsDelete" Type="int" Nullable="false" />
+    <Property Name="IsUpdate" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityContainer Name="David_BadmintonModelStoreContainer">
+    <EntitySet Name="Coachs" EntityType="Self.Coachs" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [Coachs].[CoachID] AS [CoachID], 
+    [Coachs].[CoachName] AS [CoachName], 
+    [Coachs].[Images] AS [Images], 
+    [Coachs].[TypeUserID] AS [TypeUserID], 
+    [Coachs].[GenderID] AS [GenderID], 
+    [Coachs].[Birthday] AS [Birthday], 
+    [Coachs].[Password] AS [Password], 
+    [Coachs].[Phone] AS [Phone], 
+    [Coachs].[StatusID] AS [StatusID], 
+    [Coachs].[Education] AS [Education], 
+    [Coachs].[Experience] AS [Experience], 
+    [Coachs].[Level] AS [Level], 
+    [Coachs].[TaxCode] AS [TaxCode], 
+    [Coachs].[BankName] AS [BankName], 
+    [Coachs].[BankNumber] AS [BankNumber], 
+    [Coachs].[WorkingStart] AS [WorkingStart], 
+    [Coachs].[HealthCondition] AS [HealthCondition], 
+    [Coachs].[CCCD] AS [CCCD], 
+    [Coachs].[PlaceOfOrigin] AS [PlaceOfOrigin], 
+    [Coachs].[PlaceOfResidence] AS [PlaceOfResidence], 
+    [Coachs].[Salary] AS [Salary], 
+    [Coachs].[MaritalStatus] AS [MaritalStatus], 
+    [Coachs].[Description] AS [Description], 
+    [Coachs].[NamePerson] AS [NamePerson], 
+    [Coachs].[Relationship] AS [Relationship], 
+    [Coachs].[PhoneNumber] AS [PhoneNumber], 
+    [Coachs].[UserCreated] AS [UserCreated], 
+    [Coachs].[UserUpdated] AS [UserUpdated], 
+    [Coachs].[DateCreated] AS [DateCreated], 
+    [Coachs].[DateUpdated] AS [DateUpdated]
+    FROM [dbo].[Coachs] AS [Coachs]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="Facilitys" EntityType="Self.Facilitys" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [Facilitys].[FacilityID] AS [FacilityID], 
+    [Facilitys].[FacilityName] AS [FacilityName], 
+    [Facilitys].[Address] AS [Address], 
+    [Facilitys].[Longtitude] AS [Longtitude], 
+    [Facilitys].[Latitude] AS [Latitude]
+    FROM [dbo].[Facilitys] AS [Facilitys]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="LearningProcess" EntityType="Self.LearningProcess" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [LearningProcess].[LearningProcessID] AS [LearningProcessID], 
+    [LearningProcess].[StudentID] AS [StudentID], 
+    [LearningProcess].[TimeStart] AS [TimeStart], 
+    [LearningProcess].[TimeEnd] AS [TimeEnd], 
+    [LearningProcess].[CoachName] AS [CoachName], 
+    [LearningProcess].[LearningOutComes] AS [LearningOutComes], 
+    [LearningProcess].[Comment] AS [Comment], 
+    [LearningProcess].[Feedback] AS [Feedback]
+    FROM [dbo].[LearningProcess] AS [LearningProcess]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="ModuleAccess" EntityType="Self.ModuleAccess" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [ModuleAccess].[ModuleID] AS [ModuleID], 
+    [ModuleAccess].[Name] AS [Name], 
+    [ModuleAccess].[Description] AS [Description], 
+    [ModuleAccess].[DateCreated] AS [DateCreated], 
+    [ModuleAccess].[DateUpdated] AS [DateUpdated], 
+    [ModuleAccess].[UserCreated] AS [UserCreated], 
+    [ModuleAccess].[UserUpdated] AS [UserUpdated]
+    FROM [dbo].[ModuleAccess] AS [ModuleAccess]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="RollCall" EntityType="Self.RollCall" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [RollCall].[RollCallID] AS [RollCallID], 
+    [RollCall].[StudentID] AS [StudentID], 
+    [RollCall].[isCheck] AS [isCheck], 
+    [RollCall].[StatusID] AS [StatusID], 
+    [RollCall].[TimeRollCall] AS [TimeRollCall], 
+    [RollCall].[UserCreated] AS [UserCreated], 
+    [RollCall].[UserUpdated] AS [UserUpdated], 
+    [RollCall].[DateCreated] AS [DateCreated], 
+    [RollCall].[DateUpdated] AS [DateUpdated]
+    FROM [dbo].[RollCall] AS [RollCall]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="StudentDetails" EntityType="Self.StudentDetails" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [StudentDetails].[StudentDetailsID] AS [StudentDetailsID], 
+    [StudentDetails].[StudentID] AS [StudentID], 
+    [StudentDetails].[StudentName] AS [StudentName], 
+    [StudentDetails].[Images] AS [Images], 
+    [StudentDetails].[GenderID] AS [GenderID], 
+    [StudentDetails].[Birthday] AS [Birthday], 
+    [StudentDetails].[Phone] AS [Phone], 
+    [StudentDetails].[StatusID] AS [StatusID], 
+    [StudentDetails].[Address] AS [Address], 
+    [StudentDetails].[Password] AS [Password], 
+    [StudentDetails].[Level] AS [Level], 
+    [StudentDetails].[CoachName1] AS [CoachName1], 
+    [StudentDetails].[CoachName2] AS [CoachName2], 
+    [StudentDetails].[CoachName3] AS [CoachName3], 
+    [StudentDetails].[Tuitions] AS [Tuitions], 
+    [StudentDetails].[StudyStart] AS [StudyStart], 
+    [StudentDetails].[HealthCondition] AS [HealthCondition], 
+    [StudentDetails].[Height] AS [Height], 
+    [StudentDetails].[Weight] AS [Weight], 
+    [StudentDetails].[GuardianName] AS [GuardianName], 
+    [StudentDetails].[Relationship] AS [Relationship], 
+    [StudentDetails].[GuardianPhone] AS [GuardianPhone], 
+    [StudentDetails].[Description] AS [Description], 
+    [StudentDetails].[UserCreated] AS [UserCreated], 
+    [StudentDetails].[UserUpdated] AS [UserUpdated], 
+    [StudentDetails].[DateCreated] AS [DateCreated], 
+    [StudentDetails].[DateUpdated] AS [DateUpdated]
+    FROM [dbo].[StudentDetails] AS [StudentDetails]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="Students" EntityType="Self.Students" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [Students].[StudentID] AS [StudentID], 
+    [Students].[isCheck] AS [isCheck], 
+    [Students].[FacilityID] AS [FacilityID], 
+    [Students].[CoachID] AS [CoachID], 
+    [Students].[TimeID] AS [TimeID], 
+    [Students].[RollCallID] AS [RollCallID], 
+    [Students].[TypeUserID] AS [TypeUserID]
+    FROM [dbo].[Students] AS [Students]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="Time" EntityType="Self.Time" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [Time].[TimeID] AS [TimeID], 
+    [Time].[TimeName] AS [TimeName]
+    FROM [dbo].[Time] AS [Time]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="TypeUsers" EntityType="Self.TypeUsers" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [TypeUsers].[TypeUserID] AS [TypeUserID], 
+    [TypeUsers].[UserName] AS [UserName], 
+    [TypeUsers].[Description] AS [Description], 
+    [TypeUsers].[DateCreated] AS [DateCreated], 
+    [TypeUsers].[DateUpdated] AS [DateUpdated]
+    FROM [dbo].[TypeUsers] AS [TypeUsers]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="UserModules" EntityType="Self.UserModules" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [UserModules].[UserModuleID] AS [UserModuleID], 
+    [UserModules].[ModuleID] AS [ModuleID], 
+    [UserModules].[CoachID] AS [CoachID], 
+    [UserModules].[StudentID] AS [StudentID], 
+    [UserModules].[IsView] AS [IsView], 
+    [UserModules].[IsInsert] AS [IsInsert], 
+    [UserModules].[IsDelete] AS [IsDelete], 
+    [UserModules].[IsUpdate] AS [IsUpdate]
+    FROM [dbo].[UserModules] AS [UserModules]</DefiningQuery>
+    </EntitySet>
+  </EntityContainer>
+</Schema>

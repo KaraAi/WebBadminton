@@ -1,0 +1,916 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="David_BadmintonModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Coachs">
+          <Key>
+            <PropertyRef Name="CoachID" />
+          </Key>
+          <Property Name="CoachID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="CoachName" Type="nvarchar" MaxLength="500" Nullable="false" />
+          <Property Name="Images" Type="nvarchar" MaxLength="500" />
+          <Property Name="FacilityID" Type="int" Nullable="false" />
+          <Property Name="TypeUserID" Type="int" Nullable="false" />
+          <Property Name="GenderID" Type="int" Nullable="false" />
+          <Property Name="Email" Type="nvarchar" MaxLength="500" Nullable="false" />
+          <Property Name="Birthday" Type="datetime" Nullable="false" />
+          <Property Name="Password" Type="nvarchar" MaxLength="500" Nullable="false" />
+          <Property Name="Phone" Type="nvarchar" MaxLength="500" Nullable="false" />
+          <Property Name="StatusID" Type="int" Nullable="false" />
+          <Property Name="Education" Type="int" Nullable="false" />
+          <Property Name="Experience" Type="nvarchar" MaxLength="500" Nullable="false" />
+          <Property Name="Level" Type="int" Nullable="false" />
+          <Property Name="TaxCode" Type="nvarchar" MaxLength="500" Nullable="false" />
+          <Property Name="BankName" Type="nvarchar" MaxLength="500" Nullable="false" />
+          <Property Name="BankNumber" Type="nvarchar" MaxLength="500" Nullable="false" />
+          <Property Name="WorkingStart" Type="datetime" Nullable="false" />
+          <Property Name="HealthCondition" Type="nvarchar" MaxLength="500" Nullable="false" />
+          <Property Name="CCCD" Type="nvarchar" MaxLength="500" Nullable="false" />
+          <Property Name="PlaceOfOrigin" Type="nvarchar" MaxLength="500" Nullable="false" />
+          <Property Name="PlaceOfResidence" Type="nvarchar" MaxLength="500" Nullable="false" />
+          <Property Name="Salary" Type="numeric" Precision="18" Scale="0" />
+          <Property Name="MaritalStatus" Type="int" Nullable="false" />
+          <Property Name="Description" Type="nvarchar" MaxLength="500" Nullable="false" />
+          <Property Name="NamePerson" Type="nvarchar" MaxLength="500" Nullable="false" />
+          <Property Name="Relationship" Type="nvarchar" MaxLength="500" Nullable="false" />
+          <Property Name="PhoneNumber" Type="nvarchar" MaxLength="500" Nullable="false" />
+          <Property Name="UserCreated" Type="nvarchar" MaxLength="500" Nullable="false" />
+          <Property Name="UserUpdated" Type="nvarchar" MaxLength="500" Nullable="false" />
+          <Property Name="DateCreated" Type="datetime" Nullable="false" />
+          <Property Name="DateUpdated" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Facilitys">
+          <Key>
+            <PropertyRef Name="FacilityID" />
+          </Key>
+          <Property Name="FacilityID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="FacilityName" Type="nvarchar" MaxLength="500" Nullable="false" />
+          <Property Name="Address" Type="nvarchar" MaxLength="500" Nullable="false" />
+          <Property Name="Longtitude" Type="numeric" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="Latitude" Type="numeric" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="UserCreated" Type="nvarchar" MaxLength="500" Nullable="false" />
+          <Property Name="UserUpdated" Type="nvarchar" MaxLength="500" Nullable="false" />
+          <Property Name="DateCreated" Type="datetime" Nullable="false" />
+          <Property Name="DateUpdated" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="LearningProcess">
+          <Key>
+            <PropertyRef Name="LearningProcessID" />
+          </Key>
+          <Property Name="LearningProcessID" Type="int" Nullable="false" />
+          <Property Name="StudentID" Type="int" Nullable="false" />
+          <Property Name="TimeStart" Type="date" Nullable="false" />
+          <Property Name="TimeEnd" Type="date" Nullable="false" />
+          <Property Name="CoachName" Type="nvarchar" MaxLength="500" Nullable="false" />
+          <Property Name="LearningOutComes" Type="nvarchar" MaxLength="500" />
+          <Property Name="Comment" Type="nvarchar" MaxLength="500" />
+          <Property Name="Feedback" Type="nvarchar" MaxLength="500" />
+        </EntityType>
+        <EntityType Name="ModuleAccess">
+          <Key>
+            <PropertyRef Name="ModuleID" />
+          </Key>
+          <Property Name="ModuleID" Type="numeric" Precision="18" Scale="0" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="500" Nullable="false" />
+          <Property Name="Description" Type="nvarchar" MaxLength="500" Nullable="false" />
+          <Property Name="DateCreated" Type="datetime" Nullable="false" />
+          <Property Name="DateUpdated" Type="datetime" Nullable="false" />
+          <Property Name="UserCreated" Type="nvarchar" MaxLength="500" Nullable="false" />
+          <Property Name="UserUpdated" Type="nvarchar" MaxLength="500" Nullable="false" />
+        </EntityType>
+        <EntityType Name="RollCalls">
+          <Key>
+            <PropertyRef Name="RollCallID" />
+          </Key>
+          <Property Name="RollCallID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="StudentID" Type="int" Nullable="false" />
+          <Property Name="CoachID" Type="int" Nullable="false" />
+          <Property Name="isCheck" Type="int" Nullable="false" />
+          <Property Name="StatusID" Type="int" Nullable="false" />
+          <Property Name="UserCreated" Type="nvarchar" MaxLength="500" Nullable="false" />
+          <Property Name="UserUpdated" Type="nvarchar" MaxLength="500" Nullable="false" />
+          <Property Name="DateCreated" Type="datetime" Nullable="false" />
+          <Property Name="DateUpdated" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Students">
+          <Key>
+            <PropertyRef Name="StudentID" />
+          </Key>
+          <Property Name="StudentID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="FacilityID" Type="int" Nullable="false" />
+          <Property Name="CoachID" Type="int" Nullable="false" />
+          <Property Name="TimeID" Type="int" Nullable="false" />
+          <Property Name="TypeUserID" Type="int" Nullable="false" />
+          <Property Name="StudentName" Type="nvarchar" MaxLength="500" Nullable="false" />
+          <Property Name="Images" Type="nvarchar" MaxLength="500" Nullable="false" />
+          <Property Name="GenderID" Type="int" />
+          <Property Name="Birthday" Type="datetime" Nullable="false" />
+          <Property Name="Phone" Type="nvarchar" MaxLength="500" Nullable="false" />
+          <Property Name="StatusID" Type="int" Nullable="false" />
+          <Property Name="Address" Type="nvarchar" MaxLength="500" Nullable="false" />
+          <Property Name="Password" Type="nvarchar" MaxLength="500" Nullable="false" />
+          <Property Name="Level" Type="int" />
+          <Property Name="Email" Type="nvarchar" MaxLength="500" Nullable="false" />
+          <Property Name="Tuitions" Type="numeric" Precision="18" Scale="0" />
+          <Property Name="StudyStart" Type="datetime" Nullable="false" />
+          <Property Name="HealthCondition" Type="nvarchar" MaxLength="500" Nullable="false" />
+          <Property Name="Height" Type="nvarchar" MaxLength="500" Nullable="false" />
+          <Property Name="Weight" Type="nvarchar" MaxLength="500" Nullable="false" />
+          <Property Name="GuardianName" Type="nvarchar" MaxLength="500" Nullable="false" />
+          <Property Name="Relationship" Type="nvarchar" MaxLength="500" Nullable="false" />
+          <Property Name="GuardianPhone" Type="nvarchar" MaxLength="500" Nullable="false" />
+          <Property Name="Description" Type="nvarchar" MaxLength="500" Nullable="false" />
+          <Property Name="UserCreated" Type="nvarchar" MaxLength="500" Nullable="false" />
+          <Property Name="UserUpdated" Type="nvarchar" MaxLength="500" Nullable="false" />
+          <Property Name="DateCreated" Type="datetime" Nullable="false" />
+          <Property Name="DateUpdated" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Time">
+          <Key>
+            <PropertyRef Name="TimeID" />
+          </Key>
+          <Property Name="TimeID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="TimeName" Type="nvarchar" MaxLength="500" Nullable="false" />
+          <Property Name="UserCreated" Type="nvarchar" MaxLength="500" Nullable="false" />
+          <Property Name="UserUpdated" Type="nvarchar" MaxLength="500" Nullable="false" />
+          <Property Name="DateCreated" Type="datetime" Nullable="false" />
+          <Property Name="DateUpdated" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="TypeUsers">
+          <Key>
+            <PropertyRef Name="TypeUserID" />
+          </Key>
+          <Property Name="TypeUserID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="UserName" Type="nvarchar" MaxLength="500" Nullable="false" />
+          <Property Name="Description" Type="nvarchar" MaxLength="500" />
+          <Property Name="DateCreated" Type="datetime" Nullable="false" />
+          <Property Name="DateUpdated" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="UserModules">
+          <Key>
+            <PropertyRef Name="UserModuleID" />
+          </Key>
+          <Property Name="UserModuleID" Type="numeric" Precision="18" Scale="0" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ModuleID" Type="numeric" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="CoachID" Type="int" Nullable="false" />
+          <Property Name="IsView" Type="int" Nullable="false" />
+          <Property Name="IsInsert" Type="int" Nullable="false" />
+          <Property Name="IsDelete" Type="int" Nullable="false" />
+          <Property Name="IsUpdate" Type="int" Nullable="false" />
+        </EntityType>
+        <Association Name="FK_Coachs_Facilitys">
+          <End Role="Facilitys" Type="Self.Facilitys" Multiplicity="1" />
+          <End Role="Coachs" Type="Self.Coachs" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Facilitys">
+              <PropertyRef Name="FacilityID" />
+            </Principal>
+            <Dependent Role="Coachs">
+              <PropertyRef Name="FacilityID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Coachs_TypeUsers">
+          <End Role="TypeUsers" Type="Self.TypeUsers" Multiplicity="1" />
+          <End Role="Coachs" Type="Self.Coachs" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TypeUsers">
+              <PropertyRef Name="TypeUserID" />
+            </Principal>
+            <Dependent Role="Coachs">
+              <PropertyRef Name="TypeUserID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_RollCall_Students">
+          <End Role="Students" Type="Self.Students" Multiplicity="1" />
+          <End Role="RollCalls" Type="Self.RollCalls" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Students">
+              <PropertyRef Name="StudentID" />
+            </Principal>
+            <Dependent Role="RollCalls">
+              <PropertyRef Name="StudentID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_RollCalls_Coachs">
+          <End Role="Coachs" Type="Self.Coachs" Multiplicity="1" />
+          <End Role="RollCalls" Type="Self.RollCalls" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Coachs">
+              <PropertyRef Name="CoachID" />
+            </Principal>
+            <Dependent Role="RollCalls">
+              <PropertyRef Name="CoachID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Students_Time">
+          <End Role="Time" Type="Self.Time" Multiplicity="1" />
+          <End Role="Students" Type="Self.Students" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Time">
+              <PropertyRef Name="TimeID" />
+            </Principal>
+            <Dependent Role="Students">
+              <PropertyRef Name="TimeID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Students_TypeUsers">
+          <End Role="TypeUsers" Type="Self.TypeUsers" Multiplicity="1" />
+          <End Role="Students" Type="Self.Students" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TypeUsers">
+              <PropertyRef Name="TypeUserID" />
+            </Principal>
+            <Dependent Role="Students">
+              <PropertyRef Name="TypeUserID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_UserModules_Coachs">
+          <End Role="Coachs" Type="Self.Coachs" Multiplicity="1" />
+          <End Role="UserModules" Type="Self.UserModules" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Coachs">
+              <PropertyRef Name="CoachID" />
+            </Principal>
+            <Dependent Role="UserModules">
+              <PropertyRef Name="CoachID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_UserModules_ModuleAccess">
+          <End Role="ModuleAccess" Type="Self.ModuleAccess" Multiplicity="1" />
+          <End Role="UserModules" Type="Self.UserModules" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ModuleAccess">
+              <PropertyRef Name="ModuleID" />
+            </Principal>
+            <Dependent Role="UserModules">
+              <PropertyRef Name="ModuleID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Function Name="getCheckedStudentsByDateAndCoach" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="dateSelected" Type="date" Mode="In" />
+          <Parameter Name="coachID" Type="int" Mode="In" />
+        </Function>
+        <Function Name="getModuleAccessUser" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="getStudentByCoachID" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="facilityid" Type="int" Mode="In" />
+          <Parameter Name="coachid" Type="int" Mode="In" />
+          <Parameter Name="timeid" Type="int" Mode="In" />
+        </Function>
+        <EntityContainer Name="David_BadmintonModelStoreContainer">
+          <EntitySet Name="Coachs" EntityType="Self.Coachs" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Facilitys" EntityType="Self.Facilitys" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="LearningProcess" EntityType="Self.LearningProcess" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ModuleAccess" EntityType="Self.ModuleAccess" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="RollCalls" EntityType="Self.RollCalls" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Students" EntityType="Self.Students" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Time" EntityType="Self.Time" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TypeUsers" EntityType="Self.TypeUsers" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="UserModules" EntityType="Self.UserModules" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_Coachs_Facilitys" Association="Self.FK_Coachs_Facilitys">
+            <End Role="Facilitys" EntitySet="Facilitys" />
+            <End Role="Coachs" EntitySet="Coachs" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Coachs_TypeUsers" Association="Self.FK_Coachs_TypeUsers">
+            <End Role="TypeUsers" EntitySet="TypeUsers" />
+            <End Role="Coachs" EntitySet="Coachs" />
+          </AssociationSet>
+          <AssociationSet Name="FK_RollCall_Students" Association="Self.FK_RollCall_Students">
+            <End Role="Students" EntitySet="Students" />
+            <End Role="RollCalls" EntitySet="RollCalls" />
+          </AssociationSet>
+          <AssociationSet Name="FK_RollCalls_Coachs" Association="Self.FK_RollCalls_Coachs">
+            <End Role="Coachs" EntitySet="Coachs" />
+            <End Role="RollCalls" EntitySet="RollCalls" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Students_Time" Association="Self.FK_Students_Time">
+            <End Role="Time" EntitySet="Time" />
+            <End Role="Students" EntitySet="Students" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Students_TypeUsers" Association="Self.FK_Students_TypeUsers">
+            <End Role="TypeUsers" EntitySet="TypeUsers" />
+            <End Role="Students" EntitySet="Students" />
+          </AssociationSet>
+          <AssociationSet Name="FK_UserModules_Coachs" Association="Self.FK_UserModules_Coachs">
+            <End Role="Coachs" EntitySet="Coachs" />
+            <End Role="UserModules" EntitySet="UserModules" />
+          </AssociationSet>
+          <AssociationSet Name="FK_UserModules_ModuleAccess" Association="Self.FK_UserModules_ModuleAccess">
+            <End Role="ModuleAccess" EntitySet="ModuleAccess" />
+            <End Role="UserModules" EntitySet="UserModules" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="David_BadmintonModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="David_BadmintonEntities" annotation:LazyLoadingEnabled="true">
+          <FunctionImport Name="getModuleAccessUser" ReturnType="Collection(David_BadmintonModel.getModuleAccessUser_Result)" />
+          <EntitySet Name="Facilitys" EntityType="David_BadmintonModel.Facilitys" />
+          <EntitySet Name="LearningProcess" EntityType="David_BadmintonModel.LearningProcess" />
+          <EntitySet Name="ModuleAccess" EntityType="David_BadmintonModel.ModuleAccess" />
+          <EntitySet Name="TypeUsers" EntityType="David_BadmintonModel.TypeUsers" />
+          <EntitySet Name="UserModules" EntityType="David_BadmintonModel.UserModules" />
+          <AssociationSet Name="FK_UserModules_ModuleAccess" Association="David_BadmintonModel.FK_UserModules_ModuleAccess">
+            <End Role="ModuleAccess" EntitySet="ModuleAccess" />
+            <End Role="UserModules" EntitySet="UserModules" />
+          </AssociationSet>
+          <EntitySet Name="Time" EntityType="David_BadmintonModel.Time" />
+          <EntitySet Name="RollCalls" EntityType="David_BadmintonModel.RollCalls" />
+          <FunctionImport Name="getStudentByCoachID" ReturnType="Collection(David_BadmintonModel.getStudentByCoachID_Result)">
+            <Parameter Name="facilityid" Mode="In" Type="Int32" />
+            <Parameter Name="coachid" Mode="In" Type="Int32" />
+            <Parameter Name="timeid" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="getCheckedStudentsByDateAndCoach" ReturnType="Collection(David_BadmintonModel.getCheckedStudentsByDateAndCoach_Result)">
+            <Parameter Name="dateSelected" Mode="In" Type="DateTime" />
+            <Parameter Name="coachID" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <EntitySet Name="Coachs" EntityType="David_BadmintonModel.Coachs" />
+          <AssociationSet Name="FK_Coachs_Facilitys" Association="David_BadmintonModel.FK_Coachs_Facilitys">
+            <End Role="Facilitys" EntitySet="Facilitys" />
+            <End Role="Coachs" EntitySet="Coachs" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Coachs_TypeUsers" Association="David_BadmintonModel.FK_Coachs_TypeUsers">
+            <End Role="TypeUsers" EntitySet="TypeUsers" />
+            <End Role="Coachs" EntitySet="Coachs" />
+          </AssociationSet>
+          <AssociationSet Name="FK_RollCalls_Coachs" Association="David_BadmintonModel.FK_RollCalls_Coachs">
+            <End Role="Coachs" EntitySet="Coachs" />
+            <End Role="RollCalls" EntitySet="RollCalls" />
+          </AssociationSet>
+          <AssociationSet Name="FK_UserModules_Coachs" Association="David_BadmintonModel.FK_UserModules_Coachs">
+            <End Role="Coachs" EntitySet="Coachs" />
+            <End Role="UserModules" EntitySet="UserModules" />
+          </AssociationSet>
+          <EntitySet Name="Students" EntityType="David_BadmintonModel.Students" />
+          <AssociationSet Name="FK_RollCall_Students" Association="David_BadmintonModel.FK_RollCall_Students">
+            <End Role="Students" EntitySet="Students" />
+            <End Role="RollCalls" EntitySet="RollCalls" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Students_Time" Association="David_BadmintonModel.FK_Students_Time">
+            <End Role="Time" EntitySet="Time" />
+            <End Role="Students" EntitySet="Students" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Students_TypeUsers" Association="David_BadmintonModel.FK_Students_TypeUsers">
+            <End Role="TypeUsers" EntitySet="TypeUsers" />
+            <End Role="Students" EntitySet="Students" />
+          </AssociationSet>
+          </EntityContainer>
+        <ComplexType Name="getModuleAccessUser_Result">
+          <Property Type="Int32" Name="UserMoudleID" Nullable="false" />
+          <Property Type="Decimal" Name="ModuleID" Nullable="false" Precision="18" Scale="0" />
+          <Property Type="String" Name="Name" Nullable="false" MaxLength="500" />
+          <Property Type="String" Name="Description" Nullable="false" MaxLength="500" />
+          <Property Type="Int32" Name="IsView" Nullable="false" />
+          <Property Type="Int32" Name="IsInsert" Nullable="false" />
+          <Property Type="Int32" Name="IsDelete" Nullable="false" />
+          <Property Type="Int32" Name="IsUpdate" Nullable="false" />
+          <Property Type="DateTime" Name="DateCreated" Nullable="false" Precision="23" />
+          <Property Type="DateTime" Name="DateUpdated" Nullable="false" Precision="23" />
+          <Property Type="String" Name="UserCreated" Nullable="false" MaxLength="500" />
+          <Property Type="String" Name="UserUpdated" Nullable="false" MaxLength="500" />
+        </ComplexType>
+        <EntityType Name="Facilitys">
+          <Key>
+            <PropertyRef Name="FacilityID" />
+          </Key>
+          <Property Name="FacilityID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="FacilityName" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="Address" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="Longtitude" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
+          <Property Name="Latitude" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
+          <Property Name="UserCreated" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="UserUpdated" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="DateCreated" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="DateUpdated" Type="DateTime" Nullable="false" Precision="3" />
+          <NavigationProperty Name="Coachs" Relationship="David_BadmintonModel.FK_Coachs_Facilitys" FromRole="Facilitys" ToRole="Coachs" />
+        </EntityType>
+        <EntityType Name="LearningProcess">
+          <Key>
+            <PropertyRef Name="LearningProcessID" />
+          </Key>
+          <Property Name="LearningProcessID" Type="Int32" Nullable="false" />
+          <Property Name="StudentID" Type="Int32" Nullable="false" />
+          <Property Name="TimeStart" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="TimeEnd" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="CoachName" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="LearningOutComes" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="Comment" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="Feedback" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="ModuleAccess">
+          <Key>
+            <PropertyRef Name="ModuleID" />
+          </Key>
+          <Property Name="ModuleID" Type="Decimal" Nullable="false" Precision="18" Scale="0" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="Description" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="DateCreated" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="DateUpdated" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="UserCreated" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="UserUpdated" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="UserModules" Relationship="David_BadmintonModel.FK_UserModules_ModuleAccess" FromRole="ModuleAccess" ToRole="UserModules" />
+        </EntityType>
+        <EntityType Name="TypeUsers">
+          <Key>
+            <PropertyRef Name="TypeUserID" />
+          </Key>
+          <Property Name="TypeUserID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="UserName" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="Description" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="DateCreated" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="DateUpdated" Type="DateTime" Nullable="false" Precision="3" />
+          <NavigationProperty Name="Coachs" Relationship="David_BadmintonModel.FK_Coachs_TypeUsers" FromRole="TypeUsers" ToRole="Coachs" />
+          <NavigationProperty Name="Students" Relationship="David_BadmintonModel.FK_Students_TypeUsers" FromRole="TypeUsers" ToRole="Students" />
+          </EntityType>
+        <EntityType Name="UserModules">
+          <Key>
+            <PropertyRef Name="UserModuleID" />
+          </Key>
+          <Property Name="UserModuleID" Type="Decimal" Nullable="false" Precision="18" Scale="0" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ModuleID" Type="Decimal" Nullable="false" Precision="18" Scale="0" />
+          <Property Name="CoachID" Type="Int32" Nullable="false" />
+          <Property Name="IsView" Type="Int32" Nullable="false" />
+          <Property Name="IsInsert" Type="Int32" Nullable="false" />
+          <Property Name="IsDelete" Type="Int32" Nullable="false" />
+          <Property Name="IsUpdate" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="ModuleAccess" Relationship="David_BadmintonModel.FK_UserModules_ModuleAccess" FromRole="UserModules" ToRole="ModuleAccess" />
+          <NavigationProperty Name="Coachs" Relationship="David_BadmintonModel.FK_UserModules_Coachs" FromRole="UserModules" ToRole="Coachs" />
+        </EntityType>
+        <Association Name="FK_UserModules_ModuleAccess">
+          <End Type="David_BadmintonModel.ModuleAccess" Role="ModuleAccess" Multiplicity="1" />
+          <End Type="David_BadmintonModel.UserModules" Role="UserModules" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ModuleAccess">
+              <PropertyRef Name="ModuleID" />
+            </Principal>
+            <Dependent Role="UserModules">
+              <PropertyRef Name="ModuleID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="Time">
+          <Key>
+            <PropertyRef Name="TimeID" />
+          </Key>
+          <Property Name="TimeID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="TimeName" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="UserCreated" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="UserUpdated" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="DateCreated" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="DateUpdated" Type="DateTime" Nullable="false" Precision="3" />
+          <NavigationProperty Name="Students" Relationship="David_BadmintonModel.FK_Students_Time" FromRole="Time" ToRole="Students" />
+        </EntityType>
+        <EntityType Name="RollCalls">
+          <Key>
+            <PropertyRef Name="RollCallID" />
+          </Key>
+          <Property Name="RollCallID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="StudentID" Type="Int32" Nullable="false" />
+          <Property Name="CoachID" Type="Int32" Nullable="false" />
+          <Property Name="isCheck" Type="Int32" Nullable="false" />
+          <Property Name="StatusID" Type="Int32" Nullable="false" />
+          <Property Name="UserCreated" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="UserUpdated" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="DateCreated" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="DateUpdated" Type="DateTime" Nullable="false" Precision="3" />
+          <NavigationProperty Name="Coachs" Relationship="David_BadmintonModel.FK_RollCalls_Coachs" FromRole="RollCalls" ToRole="Coachs" />
+          <NavigationProperty Name="Students" Relationship="David_BadmintonModel.FK_RollCall_Students" FromRole="RollCalls" ToRole="Students" />
+          </EntityType>
+        <ComplexType Name="getStudentByCoachID_Result">
+          <Property Type="Int32" Name="CoachID" Nullable="false" />
+          <Property Type="String" Name="CoachName" Nullable="false" MaxLength="500" />
+          <Property Type="Int32" Name="StudentID" Nullable="false" />
+          <Property Type="String" Name="StudentName" Nullable="false" MaxLength="500" />
+          <Property Type="Int32" Name="TimeID" Nullable="false" />
+          <Property Type="String" Name="TimeName" Nullable="false" MaxLength="500" />
+          <Property Type="Int32" Name="FacilityID" Nullable="false" />
+          <Property Type="String" Name="FacilityName" Nullable="false" MaxLength="500" />
+          <Property Type="Int32" Name="isCheck" Nullable="false" />
+        </ComplexType>
+        <ComplexType Name="getCheckedStudentsByDateAndCoach_Result">
+          <Property Type="Int32" Name="RollCallID" Nullable="false" />
+          <Property Type="Int32" Name="StudentID" Nullable="false" />
+          <Property Type="String" Name="StudentName" Nullable="false" MaxLength="500" />
+          <Property Type="Int32" Name="CoachID" Nullable="false" />
+          <Property Type="String" Name="CoachName" Nullable="false" MaxLength="500" />
+          <Property Type="Int32" Name="isCheck" Nullable="false" />
+          <Property Type="Int32" Name="StatusID" Nullable="false" />
+          <Property Type="String" Name="UserCreated" Nullable="false" MaxLength="500" />
+          <Property Type="DateTime" Name="DateCreated" Nullable="false" Precision="23" />
+        </ComplexType>
+        <EntityType Name="Coachs">
+          <Key>
+            <PropertyRef Name="CoachID" />
+          </Key>
+          <Property Name="CoachID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CoachName" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="Images" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="FacilityID" Type="Int32" Nullable="false" />
+          <Property Name="TypeUserID" Type="Int32" Nullable="false" />
+          <Property Name="GenderID" Type="Int32" Nullable="false" />
+          <Property Name="Email" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="Birthday" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Password" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="Phone" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="StatusID" Type="Int32" Nullable="false" />
+          <Property Name="Education" Type="Int32" Nullable="false" />
+          <Property Name="Experience" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="Level" Type="Int32" Nullable="false" />
+          <Property Name="TaxCode" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="BankName" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="BankNumber" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="WorkingStart" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="HealthCondition" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="CCCD" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="PlaceOfOrigin" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="PlaceOfResidence" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="Salary" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="MaritalStatus" Type="Int32" Nullable="false" />
+          <Property Name="Description" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="NamePerson" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="Relationship" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="PhoneNumber" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="UserCreated" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="UserUpdated" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="DateCreated" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="DateUpdated" Type="DateTime" Nullable="false" Precision="3" />
+          <NavigationProperty Name="Facilitys" Relationship="David_BadmintonModel.FK_Coachs_Facilitys" FromRole="Coachs" ToRole="Facilitys" />
+          <NavigationProperty Name="TypeUsers" Relationship="David_BadmintonModel.FK_Coachs_TypeUsers" FromRole="Coachs" ToRole="TypeUsers" />
+          <NavigationProperty Name="RollCalls" Relationship="David_BadmintonModel.FK_RollCalls_Coachs" FromRole="Coachs" ToRole="RollCalls" />
+          <NavigationProperty Name="UserModules" Relationship="David_BadmintonModel.FK_UserModules_Coachs" FromRole="Coachs" ToRole="UserModules" />
+        </EntityType>
+        <Association Name="FK_Coachs_Facilitys">
+          <End Type="David_BadmintonModel.Facilitys" Role="Facilitys" Multiplicity="1" />
+          <End Type="David_BadmintonModel.Coachs" Role="Coachs" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Facilitys">
+              <PropertyRef Name="FacilityID" />
+            </Principal>
+            <Dependent Role="Coachs">
+              <PropertyRef Name="FacilityID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Coachs_TypeUsers">
+          <End Type="David_BadmintonModel.TypeUsers" Role="TypeUsers" Multiplicity="1" />
+          <End Type="David_BadmintonModel.Coachs" Role="Coachs" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TypeUsers">
+              <PropertyRef Name="TypeUserID" />
+            </Principal>
+            <Dependent Role="Coachs">
+              <PropertyRef Name="TypeUserID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_RollCalls_Coachs">
+          <End Type="David_BadmintonModel.Coachs" Role="Coachs" Multiplicity="1" />
+          <End Type="David_BadmintonModel.RollCalls" Role="RollCalls" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Coachs">
+              <PropertyRef Name="CoachID" />
+            </Principal>
+            <Dependent Role="RollCalls">
+              <PropertyRef Name="CoachID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_UserModules_Coachs">
+          <End Type="David_BadmintonModel.Coachs" Role="Coachs" Multiplicity="1" />
+          <End Type="David_BadmintonModel.UserModules" Role="UserModules" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Coachs">
+              <PropertyRef Name="CoachID" />
+            </Principal>
+            <Dependent Role="UserModules">
+              <PropertyRef Name="CoachID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="Students">
+          <Key>
+            <PropertyRef Name="StudentID" />
+          </Key>
+          <Property Name="StudentID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="FacilityID" Type="Int32" Nullable="false" />
+          <Property Name="CoachID" Type="Int32" Nullable="false" />
+          <Property Name="TimeID" Type="Int32" Nullable="false" />
+          <Property Name="TypeUserID" Type="Int32" Nullable="false" />
+          <Property Name="StudentName" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="Images" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="GenderID" Type="Int32" />
+          <Property Name="Birthday" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Phone" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="StatusID" Type="Int32" Nullable="false" />
+          <Property Name="Address" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="Password" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="Level" Type="Int32" />
+          <Property Name="Email" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="Tuitions" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="StudyStart" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="HealthCondition" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="Height" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="Weight" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="GuardianName" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="Relationship" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="GuardianPhone" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="Description" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="UserCreated" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="UserUpdated" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="DateCreated" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="DateUpdated" Type="DateTime" Nullable="false" Precision="3" />
+          <NavigationProperty Name="RollCalls" Relationship="David_BadmintonModel.FK_RollCall_Students" FromRole="Students" ToRole="RollCalls" />
+          <NavigationProperty Name="Time" Relationship="David_BadmintonModel.FK_Students_Time" FromRole="Students" ToRole="Time" />
+          <NavigationProperty Name="TypeUsers" Relationship="David_BadmintonModel.FK_Students_TypeUsers" FromRole="Students" ToRole="TypeUsers" />
+        </EntityType>
+        <Association Name="FK_RollCall_Students">
+          <End Type="David_BadmintonModel.Students" Role="Students" Multiplicity="1" />
+          <End Type="David_BadmintonModel.RollCalls" Role="RollCalls" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Students">
+              <PropertyRef Name="StudentID" />
+            </Principal>
+            <Dependent Role="RollCalls">
+              <PropertyRef Name="StudentID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Students_Time">
+          <End Type="David_BadmintonModel.Time" Role="Time" Multiplicity="1" />
+          <End Type="David_BadmintonModel.Students" Role="Students" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Time">
+              <PropertyRef Name="TimeID" />
+            </Principal>
+            <Dependent Role="Students">
+              <PropertyRef Name="TimeID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Students_TypeUsers">
+          <End Type="David_BadmintonModel.TypeUsers" Role="TypeUsers" Multiplicity="1" />
+          <End Type="David_BadmintonModel.Students" Role="Students" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TypeUsers">
+              <PropertyRef Name="TypeUserID" />
+            </Principal>
+            <Dependent Role="Students">
+              <PropertyRef Name="TypeUserID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="David_BadmintonModelStoreContainer" CdmEntityContainer="David_BadmintonEntities">
+          <FunctionImportMapping FunctionImportName="getModuleAccessUser" FunctionName="David_BadmintonModel.Store.getModuleAccessUser">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="David_BadmintonModel.getModuleAccessUser_Result">
+                <ScalarProperty Name="UserMoudleID" ColumnName="UserMoudleID" />
+                <ScalarProperty Name="ModuleID" ColumnName="ModuleID" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="IsView" ColumnName="IsView" />
+                <ScalarProperty Name="IsInsert" ColumnName="IsInsert" />
+                <ScalarProperty Name="IsDelete" ColumnName="IsDelete" />
+                <ScalarProperty Name="IsUpdate" ColumnName="IsUpdate" />
+                <ScalarProperty Name="DateCreated" ColumnName="DateCreated" />
+                <ScalarProperty Name="DateUpdated" ColumnName="DateUpdated" />
+                <ScalarProperty Name="UserCreated" ColumnName="UserCreated" />
+                <ScalarProperty Name="UserUpdated" ColumnName="UserUpdated" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <EntitySetMapping Name="Facilitys">
+            <EntityTypeMapping TypeName="David_BadmintonModel.Facilitys">
+              <MappingFragment StoreEntitySet="Facilitys">
+                <ScalarProperty Name="DateUpdated" ColumnName="DateUpdated" />
+                <ScalarProperty Name="DateCreated" ColumnName="DateCreated" />
+                <ScalarProperty Name="UserUpdated" ColumnName="UserUpdated" />
+                <ScalarProperty Name="UserCreated" ColumnName="UserCreated" />
+                <ScalarProperty Name="Latitude" ColumnName="Latitude" />
+                <ScalarProperty Name="Longtitude" ColumnName="Longtitude" />
+                <ScalarProperty Name="Address" ColumnName="Address" />
+                <ScalarProperty Name="FacilityName" ColumnName="FacilityName" />
+                <ScalarProperty Name="FacilityID" ColumnName="FacilityID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="LearningProcess">
+            <EntityTypeMapping TypeName="David_BadmintonModel.LearningProcess">
+              <MappingFragment StoreEntitySet="LearningProcess">
+                <ScalarProperty Name="Feedback" ColumnName="Feedback" />
+                <ScalarProperty Name="Comment" ColumnName="Comment" />
+                <ScalarProperty Name="LearningOutComes" ColumnName="LearningOutComes" />
+                <ScalarProperty Name="CoachName" ColumnName="CoachName" />
+                <ScalarProperty Name="TimeEnd" ColumnName="TimeEnd" />
+                <ScalarProperty Name="TimeStart" ColumnName="TimeStart" />
+                <ScalarProperty Name="StudentID" ColumnName="StudentID" />
+                <ScalarProperty Name="LearningProcessID" ColumnName="LearningProcessID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ModuleAccess">
+            <EntityTypeMapping TypeName="David_BadmintonModel.ModuleAccess">
+              <MappingFragment StoreEntitySet="ModuleAccess">
+                <ScalarProperty Name="UserUpdated" ColumnName="UserUpdated" />
+                <ScalarProperty Name="UserCreated" ColumnName="UserCreated" />
+                <ScalarProperty Name="DateUpdated" ColumnName="DateUpdated" />
+                <ScalarProperty Name="DateCreated" ColumnName="DateCreated" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="ModuleID" ColumnName="ModuleID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TypeUsers">
+            <EntityTypeMapping TypeName="David_BadmintonModel.TypeUsers">
+              <MappingFragment StoreEntitySet="TypeUsers">
+                <ScalarProperty Name="DateUpdated" ColumnName="DateUpdated" />
+                <ScalarProperty Name="DateCreated" ColumnName="DateCreated" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="UserName" ColumnName="UserName" />
+                <ScalarProperty Name="TypeUserID" ColumnName="TypeUserID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="UserModules">
+            <EntityTypeMapping TypeName="David_BadmintonModel.UserModules">
+              <MappingFragment StoreEntitySet="UserModules">
+                <ScalarProperty Name="IsUpdate" ColumnName="IsUpdate" />
+                <ScalarProperty Name="IsDelete" ColumnName="IsDelete" />
+                <ScalarProperty Name="IsInsert" ColumnName="IsInsert" />
+                <ScalarProperty Name="IsView" ColumnName="IsView" />
+                <ScalarProperty Name="CoachID" ColumnName="CoachID" />
+                <ScalarProperty Name="ModuleID" ColumnName="ModuleID" />
+                <ScalarProperty Name="UserModuleID" ColumnName="UserModuleID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Time">
+            <EntityTypeMapping TypeName="David_BadmintonModel.Time">
+              <MappingFragment StoreEntitySet="Time">
+                <ScalarProperty Name="DateUpdated" ColumnName="DateUpdated" />
+                <ScalarProperty Name="DateCreated" ColumnName="DateCreated" />
+                <ScalarProperty Name="UserUpdated" ColumnName="UserUpdated" />
+                <ScalarProperty Name="UserCreated" ColumnName="UserCreated" />
+                <ScalarProperty Name="TimeName" ColumnName="TimeName" />
+                <ScalarProperty Name="TimeID" ColumnName="TimeID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="RollCalls">
+            <EntityTypeMapping TypeName="David_BadmintonModel.RollCalls">
+              <MappingFragment StoreEntitySet="RollCalls">
+                <ScalarProperty Name="DateUpdated" ColumnName="DateUpdated" />
+                <ScalarProperty Name="DateCreated" ColumnName="DateCreated" />
+                <ScalarProperty Name="UserUpdated" ColumnName="UserUpdated" />
+                <ScalarProperty Name="UserCreated" ColumnName="UserCreated" />
+                <ScalarProperty Name="StatusID" ColumnName="StatusID" />
+                <ScalarProperty Name="isCheck" ColumnName="isCheck" />
+                <ScalarProperty Name="CoachID" ColumnName="CoachID" />
+                <ScalarProperty Name="StudentID" ColumnName="StudentID" />
+                <ScalarProperty Name="RollCallID" ColumnName="RollCallID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="getStudentByCoachID" FunctionName="David_BadmintonModel.Store.getStudentByCoachID">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="David_BadmintonModel.getStudentByCoachID_Result">
+                <ScalarProperty Name="CoachID" ColumnName="CoachID" />
+                <ScalarProperty Name="CoachName" ColumnName="CoachName" />
+                <ScalarProperty Name="StudentID" ColumnName="StudentID" />
+                <ScalarProperty Name="StudentName" ColumnName="StudentName" />
+                <ScalarProperty Name="TimeID" ColumnName="TimeID" />
+                <ScalarProperty Name="TimeName" ColumnName="TimeName" />
+                <ScalarProperty Name="FacilityID" ColumnName="FacilityID" />
+                <ScalarProperty Name="FacilityName" ColumnName="FacilityName" />
+                <ScalarProperty Name="isCheck" ColumnName="isCheck" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="getCheckedStudentsByDateAndCoach" FunctionName="David_BadmintonModel.Store.getCheckedStudentsByDateAndCoach">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="David_BadmintonModel.getCheckedStudentsByDateAndCoach_Result">
+                <ScalarProperty Name="RollCallID" ColumnName="RollCallID" />
+                <ScalarProperty Name="StudentID" ColumnName="StudentID" />
+                <ScalarProperty Name="StudentName" ColumnName="StudentName" />
+                <ScalarProperty Name="CoachID" ColumnName="CoachID" />
+                <ScalarProperty Name="CoachName" ColumnName="CoachName" />
+                <ScalarProperty Name="isCheck" ColumnName="isCheck" />
+                <ScalarProperty Name="StatusID" ColumnName="StatusID" />
+                <ScalarProperty Name="UserCreated" ColumnName="UserCreated" />
+                <ScalarProperty Name="DateCreated" ColumnName="DateCreated" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <EntitySetMapping Name="Coachs">
+            <EntityTypeMapping TypeName="David_BadmintonModel.Coachs">
+              <MappingFragment StoreEntitySet="Coachs">
+                <ScalarProperty Name="DateUpdated" ColumnName="DateUpdated" />
+                <ScalarProperty Name="DateCreated" ColumnName="DateCreated" />
+                <ScalarProperty Name="UserUpdated" ColumnName="UserUpdated" />
+                <ScalarProperty Name="UserCreated" ColumnName="UserCreated" />
+                <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
+                <ScalarProperty Name="Relationship" ColumnName="Relationship" />
+                <ScalarProperty Name="NamePerson" ColumnName="NamePerson" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="MaritalStatus" ColumnName="MaritalStatus" />
+                <ScalarProperty Name="Salary" ColumnName="Salary" />
+                <ScalarProperty Name="PlaceOfResidence" ColumnName="PlaceOfResidence" />
+                <ScalarProperty Name="PlaceOfOrigin" ColumnName="PlaceOfOrigin" />
+                <ScalarProperty Name="CCCD" ColumnName="CCCD" />
+                <ScalarProperty Name="HealthCondition" ColumnName="HealthCondition" />
+                <ScalarProperty Name="WorkingStart" ColumnName="WorkingStart" />
+                <ScalarProperty Name="BankNumber" ColumnName="BankNumber" />
+                <ScalarProperty Name="BankName" ColumnName="BankName" />
+                <ScalarProperty Name="TaxCode" ColumnName="TaxCode" />
+                <ScalarProperty Name="Level" ColumnName="Level" />
+                <ScalarProperty Name="Experience" ColumnName="Experience" />
+                <ScalarProperty Name="Education" ColumnName="Education" />
+                <ScalarProperty Name="StatusID" ColumnName="StatusID" />
+                <ScalarProperty Name="Phone" ColumnName="Phone" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="Birthday" ColumnName="Birthday" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="GenderID" ColumnName="GenderID" />
+                <ScalarProperty Name="TypeUserID" ColumnName="TypeUserID" />
+                <ScalarProperty Name="FacilityID" ColumnName="FacilityID" />
+                <ScalarProperty Name="Images" ColumnName="Images" />
+                <ScalarProperty Name="CoachName" ColumnName="CoachName" />
+                <ScalarProperty Name="CoachID" ColumnName="CoachID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Students">
+            <EntityTypeMapping TypeName="David_BadmintonModel.Students">
+              <MappingFragment StoreEntitySet="Students">
+                <ScalarProperty Name="DateUpdated" ColumnName="DateUpdated" />
+                <ScalarProperty Name="DateCreated" ColumnName="DateCreated" />
+                <ScalarProperty Name="UserUpdated" ColumnName="UserUpdated" />
+                <ScalarProperty Name="UserCreated" ColumnName="UserCreated" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="GuardianPhone" ColumnName="GuardianPhone" />
+                <ScalarProperty Name="Relationship" ColumnName="Relationship" />
+                <ScalarProperty Name="GuardianName" ColumnName="GuardianName" />
+                <ScalarProperty Name="Weight" ColumnName="Weight" />
+                <ScalarProperty Name="Height" ColumnName="Height" />
+                <ScalarProperty Name="HealthCondition" ColumnName="HealthCondition" />
+                <ScalarProperty Name="StudyStart" ColumnName="StudyStart" />
+                <ScalarProperty Name="Tuitions" ColumnName="Tuitions" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Level" ColumnName="Level" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="Address" ColumnName="Address" />
+                <ScalarProperty Name="StatusID" ColumnName="StatusID" />
+                <ScalarProperty Name="Phone" ColumnName="Phone" />
+                <ScalarProperty Name="Birthday" ColumnName="Birthday" />
+                <ScalarProperty Name="GenderID" ColumnName="GenderID" />
+                <ScalarProperty Name="Images" ColumnName="Images" />
+                <ScalarProperty Name="StudentName" ColumnName="StudentName" />
+                <ScalarProperty Name="TypeUserID" ColumnName="TypeUserID" />
+                <ScalarProperty Name="TimeID" ColumnName="TimeID" />
+                <ScalarProperty Name="CoachID" ColumnName="CoachID" />
+                <ScalarProperty Name="FacilityID" ColumnName="FacilityID" />
+                <ScalarProperty Name="StudentID" ColumnName="StudentID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

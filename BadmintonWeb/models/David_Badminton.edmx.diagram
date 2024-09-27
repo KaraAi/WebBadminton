@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="4dc9b1a078b24e2cacb8447fb6ddc7bb" Name="Diagram1" ZoomLevel="88">
+        <EntityTypeShape EntityType="David_BadmintonModel.Facilitys" Width="1.5" PointX="3.75" PointY="2.125" />
+        <EntityTypeShape EntityType="David_BadmintonModel.LearningProcess" Width="1.5" PointX="0.75" PointY="0.75" />
+        <EntityTypeShape EntityType="David_BadmintonModel.ModuleAccess" Width="1.5" PointX="6" PointY="2.25" />
+        <EntityTypeShape EntityType="David_BadmintonModel.TypeUsers" Width="1.5" PointX="0.75" PointY="8.375" />
+        <EntityTypeShape EntityType="David_BadmintonModel.UserModules" Width="1.5" PointX="8.25" PointY="8.125" />
+        <AssociationConnector Association="David_BadmintonModel.FK_UserModules_ModuleAccess" />
+        <EntityTypeShape EntityType="David_BadmintonModel.Time" Width="1.5" PointX="8.375" PointY="1" />
+        <EntityTypeShape EntityType="David_BadmintonModel.RollCalls" Width="1.5" PointX="12.875" PointY="6.375" />
+        <EntityTypeShape EntityType="David_BadmintonModel.Coachs" Width="1.5" PointX="6" PointY="6.5" />
+        <AssociationConnector Association="David_BadmintonModel.FK_Coachs_Facilitys" />
+        <AssociationConnector Association="David_BadmintonModel.FK_Coachs_TypeUsers" />
+        <AssociationConnector Association="David_BadmintonModel.FK_RollCalls_Coachs" />
+        <AssociationConnector Association="David_BadmintonModel.FK_UserModules_Coachs" />
+        <EntityTypeShape EntityType="David_BadmintonModel.Students" Width="1.5" PointX="10.625" PointY="2.375" />
+        <AssociationConnector Association="David_BadmintonModel.FK_RollCall_Students" />
+        <AssociationConnector Association="David_BadmintonModel.FK_Students_Time" />
+        <AssociationConnector Association="David_BadmintonModel.FK_Students_TypeUsers" />
+        </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

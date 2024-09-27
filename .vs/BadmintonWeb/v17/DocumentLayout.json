@@ -1,0 +1,54 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\downloads\\DavidBadminton\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{B94AA594-C99C-4B81-9576-D723DADCBF7B}|BadmintonWeb\\BadmintonWeb.csproj|d:\\downloads\\davidbadminton\\badmintonweb\\build\\js\\custom.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{B94AA594-C99C-4B81-9576-D723DADCBF7B}|BadmintonWeb\\BadmintonWeb.csproj|solutionrelative:badmintonweb\\build\\js\\custom.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B94AA594-C99C-4B81-9576-D723DADCBF7B}|BadmintonWeb\\BadmintonWeb.csproj|d:\\downloads\\davidbadminton\\badmintonweb\\masterpage\\usermasterpage.master||{B30AFBFF-D992-43B7-B62D-2642580A2883}",
+      "RelativeMoniker": "D:0:0:{B94AA594-C99C-4B81-9576-D723DADCBF7B}|BadmintonWeb\\BadmintonWeb.csproj|solutionrelative:badmintonweb\\masterpage\\usermasterpage.master||{B30AFBFF-D992-43B7-B62D-2642580A2883}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "custom.js",
+              "DocumentMoniker": "D:\\downloads\\DavidBadminton\\BadmintonWeb\\build\\js\\custom.js",
+              "RelativeDocumentMoniker": "BadmintonWeb\\build\\js\\custom.js",
+              "ToolTip": "D:\\downloads\\DavidBadminton\\BadmintonWeb\\build\\js\\custom.js",
+              "RelativeToolTip": "BadmintonWeb\\build\\js\\custom.js",
+              "ViewState": "AgIAADAAAAAAAAAAAAAAAEIAAAAkAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
+              "WhenOpened": "2024-09-27T18:40:06.626Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "userMasterPage.Master",
+              "DocumentMoniker": "D:\\downloads\\DavidBadminton\\BadmintonWeb\\masterpage\\userMasterPage.Master",
+              "RelativeDocumentMoniker": "BadmintonWeb\\masterpage\\userMasterPage.Master",
+              "ToolTip": "D:\\downloads\\DavidBadminton\\BadmintonWeb\\masterpage\\userMasterPage.Master",
+              "RelativeToolTip": "BadmintonWeb\\masterpage\\userMasterPage.Master",
+              "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
+              "WhenOpened": "2024-09-27T18:39:44.387Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
