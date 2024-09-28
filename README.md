@@ -12,8 +12,11 @@ Bước 3: Xóa dòng này
   ![Screenshot of the Interface](images/Picture3.png)
   
 Bước 4: Thay thế bằng và chạy
+
 GO
+
 USE David_Badminton
+
 GO
 
   ![Screenshot of the Interface](images/Picture4.png)
